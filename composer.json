@@ -1,6 +1,6 @@
 {
     "name": "bkwld/auto-publish",
-    "description": "Automatically publish specified Laravel workbench assets on every request",
+    "description": "Automatically publish all Laravel workbench assets on every request",
     "authors": [
         {
             "name": "Robert Reinhard",
