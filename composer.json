@@ -1,12 +1,13 @@
 {
     "name": "bkwld/auto-publish",
-    "description": "",
+    "description": "Automatically publish specified Laravel workbench assets on every request",
     "authors": [
         {
-            "name": "",
-            "email": ""
+            "name": "Robert Reinhard",
+            "email": "info@bkwld.com"
         }
     ],
+    "license": "MIT",
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.0.x"
