@@ -15,7 +15,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 		if ($this->app->runningInConsole()) return;
 		
 		// Get a list of workbench packages and publish them one by one
-		$workbench = realpath(base_path().'/workbench');
+		$workbench = base_path().'/workbench';
 		$workbench_strlen = strlen($workbench);
 		$publisher = $this->app->make('asset.publisher');
 		foreach(glob($workbench.'/*/*', GLOB_ONLYDIR) as $dir) {
