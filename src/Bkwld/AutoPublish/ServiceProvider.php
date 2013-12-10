@@ -13,13 +13,17 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 		
 		// Don't publish if running through CLI
 		if ($this->app->runningInConsole()) return;
+
+		// Register the asset publisher, which is ordinarily only
+		// registered if running through the console
+		$this->app->register('Illuminate\Foundation\Providers\PublisherServiceProvider');
+		$publisher = $this->app->make('asset.publisher');
 		
 		// Get a list of workbench packages and publish them one by one
 		$workbench = base_path().'/workbench';
 		$workbench_strlen = strlen($workbench);
-		$publisher = $this->app->make('asset.publisher');
 		foreach(glob($workbench.'/*/*', GLOB_ONLYDIR) as $dir) {
-			
+
 			// Check that that package has assets
 			if (!is_dir($dir.'/public')) continue;
 			
